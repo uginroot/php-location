@@ -19,4 +19,6 @@ $location
 
 Location::createFromPoint('POINT(55.7539 37.6208)'); // Location(55.7539, 37.6208)
 Location::createFromString('55.7539', '37.6208'); // Location(55.7539, 37.6208)
+
+$location->toPoint(); // "POINT(55.753900, 37.620800)"
 ```
