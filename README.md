@@ -1,5 +1,11 @@
 # Php location type
 
+## Install
+```bash
+composer require uginroot/php-location:^1.0
+```
+
+## Example
 ```php
 use Uginroot\PhpLocation\Location;
 
