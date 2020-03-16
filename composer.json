@@ -1,0 +1,24 @@
+{
+  "name": "uginroot/php-location",
+  "description": "Php type location",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Soroka Anton",
+      "email": "uginroot@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Uginroot\\PhpLocation\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Uginroot\\PhpLocation\\Test\\": "tests"
+    }
+  },
+  "require": {
+    "php": "^7.4"
+  }
+}
