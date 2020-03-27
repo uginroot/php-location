@@ -61,7 +61,7 @@ class LocationTest extends TestCase
         $location1 = new Location(55.7539, 37.6208);
         $location2 = new Location(59.9398, 30.3146);
 
-        $this->assertSame(634_568, (int)$location1->distanceEarth($location2));
+        $this->assertSame(634568, (int)$location1->distanceEarth($location2));
     }
 
     public function testToPoint():void

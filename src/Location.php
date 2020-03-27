@@ -5,23 +5,22 @@ namespace Uginroot\PhpLocation;
 
 
 use Uginroot\PhpLocation\Exception\NotNumericValueException;
-use Uginroot\PhpLocation\Exception\NotPointValueException;
 
 class Location
 {
     public const POINT_FORMAT = 'POINT(%f %f)';
 
-    public const EARTH_DIAMETER = 6371_000 * 2;
+    public const EARTH_DIAMETER = 6371000 * 2;
 
     /**
      * @var float
      */
-    private float $latitude;
+    private $latitude;
 
     /**
      * @var float
      */
-    private float $longitude;
+    private $longitude;
 
     /**
      * @param string $latitude

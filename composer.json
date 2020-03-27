@@ -8,6 +8,9 @@
       "email": "uginroot@gmail.com"
     }
   ],
+  "require": {
+    "php": "^7.2"
+  },
   "autoload": {
     "psr-4": {
       "Uginroot\\PhpLocation\\": "src"
@@ -17,8 +20,5 @@
     "psr-4": {
       "Uginroot\\PhpLocation\\Test\\": "tests"
     }
-  },
-  "require": {
-    "php": "^7.4"
   }
 }
