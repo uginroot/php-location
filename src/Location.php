@@ -8,8 +8,6 @@ use Uginroot\PhpLocation\Exception\NotNumericValueException;
 
 class Location
 {
-    public const POINT_FORMAT = 'POINT(%f %f)';
-
     public const EARTH_DIAMETER = 6371000 * 2;
 
     /**
@@ -35,21 +33,6 @@ class Location
         $latitudeFloat = filter_var($latitude, FILTER_VALIDATE_FLOAT);
         $longitudeFloat = filter_var($longitude, FILTER_VALIDATE_FLOAT);
         return new static($latitudeFloat, $longitudeFloat);
-    }
-
-    /**
-     * @param string $point
-     * @return static
-     */
-    public static function createFromPoint(string $point):self
-    {
-        [$latitude, $longitude] = sscanf($point, static::POINT_FORMAT);
-
-        if($latitude === null || $longitude === null){
-            throw new NotPointValueException(sprintf('Unexpected point string. Expected format: "%s"', static::POINT_FORMAT));
-        }
-
-        return new static($latitude, $longitude);
     }
 
     /**
@@ -123,14 +106,6 @@ class Location
     public function move(float $distanceLatitude, float $distanceLongitude):self
     {
         return new static($this->getLatitude() + $distanceLatitude, $this->getLongitude() + $distanceLongitude);
-    }
-
-    /**
-     * @return string
-     */
-    public function toPoint():string
-    {
-        return sprintf(static::POINT_FORMAT, $this->getLatitude(), $this->getLongitude());
     }
 
     public function distance(self $point):float

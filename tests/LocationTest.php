@@ -6,7 +6,6 @@ namespace Uginroot\PhpLocation\Test;
 
 use PHPUnit\Framework\TestCase;
 use Uginroot\PhpLocation\Exception\NotNumericValueException;
-use Uginroot\PhpLocation\Exception\NotPointValueException;
 use Uginroot\PhpLocation\Location;
 
 class LocationTest extends TestCase
@@ -33,19 +32,6 @@ class LocationTest extends TestCase
         Location::createFromString('', '');
     }
 
-    public function testCreateFromPoint():void
-    {
-        $location = Location::createFromPoint('POINT(1 1)');
-        $this->assertSame(1.0, $location->getLatitude());
-        $this->assertSame(1.0, $location->getLongitude());
-    }
-
-    public function testCreateFromPointException():void
-    {
-        $this->expectException(NotPointValueException::class);
-        Location::createFromPoint('');
-    }
-
     public function testDistance():void
     {
         $location = new Location(0, 0);
@@ -62,12 +48,6 @@ class LocationTest extends TestCase
         $location2 = new Location(59.9398, 30.3146);
 
         $this->assertSame(634568, (int)$location1->distanceEarth($location2));
-    }
-
-    public function testToPoint():void
-    {
-        $location = new Location(1.1, 1.1);
-        $this->assertSame('POINT(1.100000 1.100000)', $location->toPoint());
     }
 
     public function testMove():void
