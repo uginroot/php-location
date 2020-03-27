@@ -2,7 +2,7 @@
 
 ## Install
 ```bash
-composer require uginroot/php-location:^1.0
+composer require uginroot/php-location:^1.1
 ```
 
 ## Example
